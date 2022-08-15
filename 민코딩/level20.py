@@ -94,3 +94,5 @@
 #     remain(n//2)
 #     print(n, end = ' ')
 # result = remain(n)
+
+

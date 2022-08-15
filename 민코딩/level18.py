@@ -159,5 +159,3 @@
 #
 # get_floor = isPattern()
 # get_floor
-
-

@@ -1,3 +1,4 @@
+
 # 민코딩 level 19.5 2번
 # A = [list(map(int, input().split())) for _ in range(5)]
 #
@@ -98,8 +99,5 @@
 #             max_sum = sum_array
 #             max_index = (i, j)
 # print(f'(%d,%d)' %(max_index[0], max_index[1]))
-
-
-
 
 

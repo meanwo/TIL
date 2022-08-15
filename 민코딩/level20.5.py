@@ -1,3 +1,4 @@
+
 # 민코딩 level 20.5 1번
 # def bbq(n):
 #     if n == 3:
@@ -118,4 +119,3 @@ for i in range(4-pat_size[0]+1):
             max_sum = sum_arr
             max_index = [i, j]
 print(f'(%d,%d)' %(max_index[0], max_index[1]))
-
