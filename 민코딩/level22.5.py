@@ -68,17 +68,57 @@
 #     print()
 
 # 민코딩 level 22.5 5번
+# map_array = [[3, 5, 4, 2, 2, 3], [1, 3, 3, 3, 4, 2], [5, 4, 4, 2, 3, 5]]
+# price_array = ["T", 'P', 'G', 'K', 'C']
+#
+# input_code = list(input().split())
+#
+# input_code[0] = ord(input_code[0])
+# input_code[1] = int(input_code[1])
+# # print(input_code)
+#
+# price_index = map_array[input_code[0]-65][input_code[1]-1]
+# print(price_array[price_index-1])
 
-map_array = [[3, 5, 4, 2, 2, 3], [1, 3, 3, 3, 4, 2], [5, 4, 4, 2, 3, 5]]
-price_array = ["T", 'P', 'G', 'K', 'C']
+# 민코딩 level 22.5 6번
+# N = [list(input().split()) for _ in range(4)]
+#
+# for i in range(1, 4):
+#     for j in range(4-i):
+#         if len(N[j][0]) > len(N[j+1][0]):
+#             N[j][0], N[j+1][0] = N[j+1][0], N[j][0]
+#
+#
+# for i in range(4):
+#     for j in range(1):
+#         print(*N[i][j], sep='')
 
-input_code = list(input().split())
+# 민코딩 level 22.5 7번
+n = int(input())
+ABCD = [
+    [[' ', '#', ' '],
+     ['#', ' ', '#'],
+     ['#', '#', '#'],
+     ['#', ' ', '#'],
+     ['#', ' ', '#']],
+    [['#', '#', '#'],
+     ['#', ' ', '#'],
+     ['#', '#', '#'],
+     ['#', ' ', '#'],
+     ['#', '#', '#']],
+    [['#', '#', '#'],
+     ['#', ' ', '#'],
+     ['#', ' ', ' '],
+     ['#', ' ', '#'],
+     ['#', '#', '#']],
+    [['#', '#', ' '],
+     ['#', ' ', '#'],
+     ['#', ' ', '#'],
+     ['#', ' ', '#'],
+     ['#', '#', ' ']]
+    ]
 
-input_code[0] = ord(input_code[0])
-input_code[1] = int(input_code[1])
-print(input_code)
-# input_asci = input_code.replace(input_code[0], ord(input_code[0]))
-
-# print(input_asci)
-
-
+for j in range(5):
+    for k in range(3):
+        print(ABCD[n][j][k], end= '')
+    print()
