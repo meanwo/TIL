@@ -41,19 +41,19 @@
 # print(*A, sep ='')
 
 #수정 필요 코드
-sen = list(input())
-t1,t2= input().split()
-
-for i in range(len(sen)): #5일때 0,1,2,3,4
-    if t1 == sen[i] or t2 == sen[i]:
-        if i-1<0 or i+1>4:
-            print(i)
-            continue
-        print(i)
-        sen[i-1] = '#'
-        sen[i+1] = '#'
-
-print(sen)
+# sen = list(input())
+# t1,t2= input().split()
+#
+# for i in range(len(sen)): #5일때 0,1,2,3,4
+#     if t1 == sen[i] or t2 == sen[i]:
+#         if i-1<0 or i+1>4:
+#             print(i)
+#             continue
+#         print(i)
+#         sen[i-1] = '#'
+#         sen[i+1] = '#'
+#
+# print(sen)
 
 
 # 민코딩 21.5 4번
@@ -123,7 +123,7 @@ print(sen)
 #
 # print(cnt)
 
-# 민코딩 21.5 8번
+# # 민코딩 21.5 8번
 # A = [['_', '_', '_'], ['_', '_', '_'], ['A', 'T', 'K'], ['_', '_', '_'], ['_', '_', '_']]
 # command = [list(input().split()) for _ in range(7)]
 #
@@ -155,3 +155,36 @@ print(sen)
 #
 # for i in range(5):
 #     print(*new_A[i], sep='')
+
+# # 민코딩 21.5 8번(함수)
+# arr = [list(input().split()) for _ in range(7)] # 행마다 [model, cmd]
+#
+# loc = [
+# ['_', '_', '_'],
+# ['_', '_', '_'],
+# ['A', 'T', 'K'],
+# ['_', '_', '_'],
+# ['_', '_', '_']
+# ]
+#
+# # 모델 위치 찾기
+# def Model(model):
+#     for i in range(5):
+#         for j in range(3):
+#             if loc[i][j] == model:
+#                 return i, j   # (i, j) 리턴 됨
+#
+# # 명령어 받기
+# for y in range(7):
+#     i, j = Model(arr[y][0])
+#     if arr[y][1] == 'UP':
+#         loc[i][j], loc[i-1][j] = loc[i-1][j], loc[i][j]
+#     if arr[y][1] == 'DOWN':
+#         loc[i][j], loc[i+1][j] = loc[i+1][j], loc[i][j]
+#     if arr[y][1] == 'LEFT':
+#         loc[i][j], loc[i][j-1] = loc[i][j-1], loc[i][j]
+#     if arr[y][1] == 'RIGHT':
+#         loc[i][j], loc[i+1][j] = loc[i+1][j], loc[i][j]
+#
+# for i in range(5):
+#     print(*loc[i], sep='')

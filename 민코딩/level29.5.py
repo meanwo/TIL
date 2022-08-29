@@ -112,17 +112,61 @@
 #     print(*new_arr[i], sep ='')
 
 # 민코딩 level29.5 7번
+# n = list(map(int, input().split()))
+# map_list = ['_', '_', '_', '_', '_']
+#
+# for i in range(n[1]+1):
+#     if map_list[-1] != '_':
+#         print(*['_', '_', '_', '_', '_'], sep ='')
+#         break
+#
+#     if i == n[1]:
+#         print(*['_', '_', '_', '_', '_'], sep ='')
+#     else:
+#         map_list[n[0]+i] = n[1]-i
+#         map_list[n[0]+i-1] = '_'
+#         print(*map_list, sep ='')
 
-n = list(map(int, input().split()))
-map_list = ['_', '_', '_', '_', '_']
+# 민코딩 level29.5 8번
+# arr = [list(input()) for _ in range(4)]
+# # print(arr)
+# dx = [1, 0, -1, 0, 1]
+# dy = [0, 1, 0, -1, 0]
+#
+# for i in range(5):
+#     for j in range(4):
+#         for k in range(3):
+#             if arr[j][k].isalpha():
+#                 if j+dy[i] >= 0 and j+dy[i] <= 3 and k+dx[i] >=0 and k+dx[i] <= 2:
+#                     if arr[j+dy[i]][k+dx[i]] == '_':
+#                         arr[j][k], arr[j+dy[i]][k+dx[i]] = arr[j+dy[i]][k+dx[i]], arr[j][k]
+#
+# for i in range(4):
+#     print(*arr[i], sep='')
 
-for i in range(n[0]+1):
+# 민코딩 level29.5 9번
+# A = [list(input()) for _ in range(2)]
+# print(A)
+A = input()
+B = input()
+if len(A) >= len(B):
+    short_str = B
+    long_str = A
+elif len(A) < len(B):
+    short_str = A
+    long_str = B
 
-    if i == n[0]:
-        print(['_', '_', '_', '_', '_'])
-    else:
-        map_list[n[0]+i] = n[1]-i
-        map_list[n[0]+i-1] = '_'
-        # if map_list[-1] != '_':
-        #     print(['_', '_', '_', '_', '_'])
-        print(map_list)
+# 부분 문자열
+part = []
+for i in range(len(short_str)):
+    for j in range(1, len(short_str)+1):
+        if i<j:
+            part.append(short_str[i:j])
+
+max_len = 0
+for i in range(len(part)):
+    if part[i] in long_str:
+        if len(part[i]) > max_len:
+            max_len = len(part[i])
+            max_word = part[i]
+print(max_word)
