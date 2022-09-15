@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # 다른 회사가 만든 어플리케이션(Third Party apps)
 
     # 장고 자회사가 만든 어플리케이션( Django apps )
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

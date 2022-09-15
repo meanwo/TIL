@@ -15,15 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# App URL mapping 후
 # from articles import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # App URL mapping 전
     # path('index/', views.index),
     # path('inherit/', views.inherit),
-    # # url을 받으면 views의 throw로 전송한다는 의미
     # path('throw/', views.throw),
     # path('catch/', views.catch),
     # path('hello/<str:name>/', views.hello),
+    # path('hello/<int:name>/', views.hello),
+
+    # App URL mapping 후
     path('articles/', include('articles.urls')),
 ]

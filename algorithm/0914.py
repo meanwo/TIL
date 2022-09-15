@@ -79,10 +79,13 @@ arr=[0]*200
 
 def findboss(member):
     global arr
-    if arr[ord(member)]==0:
+    if arr[ord(member)] == 0:
         return member
-    ret=findboss(arr[ord(member)])
+    ret = findboss(arr[ord(member)])
+
+    # 최상위 부모를 찾을 때 계산 과정을 줄여주는 부분
     arr[ord(member)]=ret
+
     return ret
 
 
@@ -91,13 +94,13 @@ def union(a,b):
     global arr
 
     fa,fb=findboss(a),findboss(b)
-    if fa==fb:return 1
+    if fa == fb:return 1
     arr[ord(fb)]=fa
 
 answer=0
 for i in range(n):
-    a,b=edge[i]
-    ret=union(a,b)
+    a, b = edge[i]
+    ret = union(a,b)
     if ret==1:
         answer=1
         break

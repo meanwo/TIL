@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>NEW</h1>
+  <form action="{% url 'articles:create' %}" method="POST">
+    {% csrf_token %}
+  {% comment %} <form action="#" method="GET"> {% endcomment %}
+    <label for="title">Title: </label>
+    <input type="text" name="title">
+    
+    <label for="title">Content: </label>
+    <textarea name="content"></textarea>
+    <input type="submit">    
+  </form>
+  
+  <a href="{% url 'articles:main' %}">[BACK]</a>
+{% endblock content %}
