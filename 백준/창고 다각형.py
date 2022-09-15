@@ -7,7 +7,7 @@ order_list = sorted(arr, key=lambda x: x[0])
 max_index = 0
 
 for i in range(n):
-    if arr[i][1] > order_list[max_index][1]:
+    if order_list[i][1] > order_list[max_index][1]:
         max_index = i
 # print(max_index)
 max_xy = order_list[max_index]
@@ -24,7 +24,7 @@ while True:
         break
     max_index_left = idx1-1
     for i in range(idx1):
-        if order_list[i][1] > order_list[max_index_left][1]:
+        if order_list[i][1] >= order_list[max_index_left][1]:
             max_index_left = i
     # box_list.append(order_list[max_index_left])
 
@@ -40,7 +40,7 @@ while True:
         break
     max_index_right = idx2+1
     for i in range(idx2+1, n):
-        if order_list[i][1] > order_list[max_index_right][1]:
+        if order_list[i][1] >= order_list[max_index_right][1]:
             max_index_right = i
     # box_list.append(order_list[max_index_right])
 

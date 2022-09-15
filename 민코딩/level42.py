@@ -66,19 +66,68 @@
 # print(min_cnt)
 
 # 4번
-coin_list = [10, 40, 60]
-change = int(input())
-min_cnt = 9999
-def dfs(level, change, cnt):
-    global coin_list, min_cnt
-    if change == 0:
-        if cnt < min_cnt:
-            min_cnt = cnt
+# coin_list = [10, 40, 60]
+# change = int(input())
+# min_cnt = 9999
+# def dfs(level, change, cnt):
+#     global coin_list, min_cnt
+#     if change <= 0:
+#         if cnt < min_cnt:
+#             min_cnt = cnt
+#         return
+#
+#     for i in range(len(coin_list)):
+#         backup = change
+#         dfs(level+1, change-coin_list[i], cnt+1)
+#         change = backup
+#
+# dfs(0, change, 0)
+# print(min_cnt)
+
+# 5번
+# num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# N = int(input())
+#
+# cnt = 0
+# def dfs(level, total):
+#     global cnt
+#     if level == N:
+#         if total == 10:
+#             cnt += 1
+#         return
+#
+#     for i in range(9):
+#         backup = total
+#         dfs(level+1, total+num_list[i])
+#         total = backup
+# dfs(0, 0)
+# print(cnt)
+
+# 6번
+N, M = map(int, input().split())
+arr = list(map(int, input().split()))
+
+used_list = [0]*N
+new_list = [0]*M
+min_result = 999
+min_list = []
+def dfs(level, result):
+    global min_result, min_list
+    if level == M:
+        if result < min_result:
+            min_list = new_list
+            min_result = result
         return
 
-    for i in range(len(coin_list)):
-        # backup = change
-        dfs(level+1, change-coin_list[i], cnt+1)
-        # change = backup
-dfs(0, change, 0)
-print(min_cnt)
+    for i in range(N):
+        if used_list[i] == 0:
+            used_list[i] = 1
+            new_list[level] = arr[i]
+            backup = result
+            dfs(level+1, result*arr[i])
+            used_list[i] = 0
+            result = backup
+a = dfs(0, 1)
+# print(a)
+print(min_result)
+print(min_list)
