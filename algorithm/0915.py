@@ -256,34 +256,34 @@
 # 중복가능( 한번 개발한 했던곳을 또 개발 가능)
 # 개발후 3*3배열의 땅의가치가 MAx가 되었을때
 # 그 MAx값을 출력해 주시면 됩니다.
-import copy
-
-arr = [[4, 2, 1], [5, 3, 9], [7, 8, 1]]
-dx = [0, 0, 0, 1, -1]
-dy = [0, 1, -1, 0, 0]
-
-max_sum = 0
-def dfs(level):
-    global max_sum, arr
-    backup = copy.deepcopy(arr)
-    if level == 3:
-        sum_arr = 0
-        for i in range(3):
-            for j in range(3):
-                sum_arr += arr[i][j]
-        if max_sum < sum_arr:
-            max_sum = sum_arr
-        return
-    for j in range(3):
-        for k in range(3):
-
-            for i in range(5):
-                if 0 <= j+dy[i] <= 2 and 0 <= k+dx[i] <= 2:
-
-                    arr[j+dy[i]][k+dx[i]] = (arr[j+dy[i]][k+dx[i]]*7)%10
-
-            dfs(level+1)
-            arr = copy.deepcopy(backup)
-dfs(0)
-print(max_sum)
+# import copy
+#
+# arr = [[4, 2, 1], [5, 3, 9], [7, 8, 1]]
+# dx = [0, 0, 0, 1, -1]
+# dy = [0, 1, -1, 0, 0]
+#
+# max_sum = 0
+# def dfs(level):
+#     global max_sum, arr
+#     backup = copy.deepcopy(arr)
+#     if level == 3:
+#         sum_arr = 0
+#         for i in range(3):
+#             for j in range(3):
+#                 sum_arr += arr[i][j]
+#         if max_sum < sum_arr:
+#             max_sum = sum_arr
+#         return
+#     for j in range(3):
+#         for k in range(3):
+#
+#             for i in range(5):
+#                 if 0 <= j+dy[i] <= 2 and 0 <= k+dx[i] <= 2:
+#
+#                     arr[j+dy[i]][k+dx[i]] = (arr[j+dy[i]][k+dx[i]]*7)%10
+#
+#             dfs(level+1)
+#             arr = copy.deepcopy(backup)
+# dfs(0)
+# print(max_sum)
 

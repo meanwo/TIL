@@ -104,30 +104,95 @@
 # print(cnt)
 
 # 6번
-N, M = map(int, input().split())
-arr = list(map(int, input().split()))
+# import copy
+# N, M = map(int, input().split())
+# arr = list(map(int, input().split()))
+#
+# used_list = [0]*N
+# new_list = [0]*M
+# min_result = 999
+# min_list = []
+# def dfs(level, result):
+#     global min_result, min_list
+#     if level == M:
+#         if result < min_result:
+#             min_list = copy.deepcopy(new_list)
+#             min_result = result
+#         return
+#
+#     for i in range(N):
+#         if used_list[i] == 0:
+#             used_list[i] = 1
+#             new_list[level] = arr[i]
+#             backup = result
+#             dfs(level+1, result*arr[i])
+#             used_list[i] = 0
+#             result = backup
+#
+# a = dfs(0, 1)
+# final_result = sorted(min_list)
+# print(*final_result, sep = ' ')
 
-used_list = [0]*N
-new_list = [0]*M
-min_result = 999
-min_list = []
-def dfs(level, result):
-    global min_result, min_list
-    if level == M:
-        if result < min_result:
-            min_list = new_list
-            min_result = result
-        return
 
-    for i in range(N):
-        if used_list[i] == 0:
-            used_list[i] = 1
-            new_list[level] = arr[i]
-            backup = result
-            dfs(level+1, result*arr[i])
-            used_list[i] = 0
-            result = backup
-a = dfs(0, 1)
-# print(a)
-print(min_result)
-print(min_list)
+# 7번
+# dict = {'a': 15, 'b': 20, 'c': 44, 'd': 22, 'e': 55, 'f': 16, 'g': 45}
+# input_arr = list(input())
+# n = int(input())
+# used_list = [0]*len(input_arr)
+#
+# max_total = 0
+# def dfs(level, total):
+#     global max_total
+#     if level == n:
+#         if total % 10 == 0:
+#             if total > max_total:
+#                max_total = total
+#         return
+#
+#     for i in range(len(input_arr)):
+#         if used_list[i] == 0:
+#             used_list[i] = 1
+#             backup = total
+#             dfs(level+1, total-dict[input_arr[i]])
+#             used_list[i] = 0
+#             total = backup
+# def init_cost(input_arr):
+#     cost = 0
+#     for i in range(len(input_arr)):
+#         cost += dict[input_arr[i]]
+#     return cost
+#
+# a = init_cost(input_arr)
+#
+# dfs(0, a)
+# print(max_total)
+
+
+# 8번
+# n = int(input())
+# arr = [list(map(int, input().split())) for _ in range(n)]
+#
+# dx = [0, 0, 1, -1]
+# dy = [1, -1, 0, 0]
+# arr[0][0] = 1
+# flag = 0
+# def dfs(y, x):
+#
+#     global flag
+#     if (y, x) == (n-1, n-1):
+#         flag = 1
+#         return
+#
+#     for i in range(n):
+#         for j in range(n):
+#             for k in range(4):
+#                 if  0 <= y+dy[k] <= n-1 and 0 <= x+dx[k] <= n-1 and arr[y+dy[k]][x+dx[k]] == 0:
+#                     arr[y+dy[k]][x+dx[k]] = 1
+#                     dfs(y+dy[k], x+dx[k])
+# dfs(0,0)
+#
+#
+# if flag == 1:
+#     print('가능')
+# else:
+#     print('불가능')
