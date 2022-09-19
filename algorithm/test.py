@@ -1,44 +1,50 @@
-n = int(input())
-arr = [list(map(int, input().split()))for _ in range(n)]
-
-idx = [5, 3, 4, 1, 2, 0]
-
-# sum_max = 0
-# def dice(level, floor):
-#     global sum_max
+import copy
+N = list(map(int, input().split()))
 #
-#     if level == n:
-#         return sum_max
-#     if arr[level].index(floor) == 5 or arr[level].index(floor) == 0:
-#         sum_max += max(arr[level][1:5])
-#     elif arr[level].index(floor) == 4 or arr[level].index(floor) == 2:
-#         sum_max += max(arr[level][0], arr[level][1], arr[level][3], arr[level][5])
-#     elif arr[level].index(floor) == 1 or arr[level].index(floor) == 3:
-#         sum_max += max(arr[level][0], arr[level][2], arr[level][4], arr[level][5])
+# # cnt = 0
+# def find_total(level, arr, total):
 #
-#     floor = arr[level][idx[arr[level].index(floor)]]
-#     return dice(level+1, floor)
+#     if level == 3:
+#
+#         return
+#     for i in range(6):
+#         backup = N[i]
+#         total += N[i]
+#         N[i] = 0
+#         find_total(level+1, total)
+#         N[i] = backup
+#
+# result = find_total(0,0)
+#
+# print(result)
+# # result = find_total(0, 0)
+# # print(result)
 
-result_max = 0
-for i in range(6):
-    floor = arr[0][i]
-    sum_max = 0
-    for level in range(n):
-        if arr[level].index(floor) == 5 or arr[level].index(floor) == 0:
-            sum_max += max(arr[level][1:5])
-        elif arr[level].index(floor) == 4 or arr[level].index(floor) == 2:
-            sum_max += max(arr[level][0], arr[level][1], arr[level][3], arr[level][5])
-        elif arr[level].index(floor) == 1 or arr[level].index(floor) == 3:
-            sum_max += max(arr[level][0], arr[level][2], arr[level][4], arr[level][5])
+def min_total2(arr, min_num):
+    used_list = [0]*6
+    for i in range(0, 3):
+        backup_1 = arr[i]
+        # used_list[i] = 1
 
-        floor = arr[level][idx[arr[level].index(floor)]]
+        # arr[i] = 0
+        for j in range(3, 6):
+            # if used_list[j] == 0:
+            backup_2 = arr[j]
+            # used_list[j] = 1
+            # arr[j] = 0
+            for k in range(1, 5):
+                total = 0
+                    # if used_list[k] == 0:
+                # used_list[k] = 1
+                total += arr[i]+arr[j]+arr[k]
 
-    if sum_max > result_max:
-        result_max = sum_max
+                if min_num > total:
+                    min_num = total
+                    min_used_list = copy.deepcopy(used_list)
+                    arr[k] = 0
+                arr[j] = 0
+        arr[i] = 0
+    return min_used_list
 
-    # result = dice(0, arr[0][i])
-    # if sum_max > result_max:
-    #     result_max = sum_max
-
-
-print(result_max)
+result = min_total2(N, 999)
+print(result)
