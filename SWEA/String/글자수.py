@@ -9,3 +9,6 @@ for k in range(T):
             if A[1][j] == A[0][i]:
                 str_dict[A[0][i]] += 1
     print(f'#%d %d' %(k+1, max(str_dict.values())))
+
+
+

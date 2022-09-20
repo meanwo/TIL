@@ -249,6 +249,12 @@ def find_total(arr):
             for k in range(1, 5):
                 total += arr[k]
     return arr, total
+
+result = find_total()
+
+
+
+
 result = find_total(N)
 print(result[1])
 def min_total(arr, min_num):
