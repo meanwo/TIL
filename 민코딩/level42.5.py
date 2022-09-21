@@ -172,132 +172,92 @@ import copy
 #         print(f'%d+' %(choose_number_lst[i]), end='')
 
 # 5번
-import copy
-N = list(map(int, input().split()))
-turn = int(input())
-turn_init = copy.deepcopy(turn)
-# used_list = [0]*6
-max_total = 0
-def dfs(turn, total):
-    global max_total
-    if turn == 0:
-        if total > max_total:
-            max_total = total
-        return
-
-    if turn == 1:
-        print(N)
-        final_food = 0
-        for i in range(6):
-            if N[i] != 0:
-                final_food += N[i]
-        print(final_food)
-        total += final_food*2**(turn_init-1)
-        # backup = total
-        # max_1 = max(N[0:3])
-        # N[N.index(max_1)] = 0
-        # max_2 = max(N[3:6])
-        # N[N.index(max_2)] = 0
-        # max_3 = max(N[1:5])
-        # N[N.index(max_3)] = 0
-        # total += (max_1+max_2+max_3)*2**(turn_init-1)
-        # print(total)
-        dfs(turn-1, total)
-        # total = backup
-    else:
-        if turn == turn_init:
-            min_list = min_total(N, 999)
-            for i in range(6):
-                if min_list[i] == 1:
-                    total += N[i]
-                    N[i] = 0
-            dfs(turn-1, total)
-        else:
-            dfs(turn-1, total)
-
-
-        # # backup = total
-        # min_1 = min_except_zero(N[0:3], 999)
-        # # min_1 = min(N[0:3])
-        # N[N.index(min_1)] = 0
-        # min_2 = min_except_zero(N[3:6], 999)
-        # # min_2 = min(N[3:6])
-        # N[N.index(min_2)] = 0
-        # min_3 = min_except_zero(N[1:5], 999)
-        # # min_3 = min(N[1:5])
-        # N[N.index(min_3)] = 0
-        # total += (min_1 + min_2 + min_3)*(turn_init-turn+1)
-        # print(total)
-        # dfs(turn - 1, total)
-
-
-
-def min_except_zero(arr, min_num):
-    for i in range(len(arr)):
-        if arr[i] != 0 and min_num > arr[i]:
-            min_num = arr[i]
-    return min_num
-
-def find_total(arr):
-    total = 0
-    for i in range(0, 3):
-        total += arr[i]
-        arr[i] = 0
-        for j in range(3, 6):
-            total += arr[j]
-            arr[j] = 0
-            for k in range(1, 5):
-                total += arr[k]
-    return arr, total
-
-result = find_total()
-
-
-
-
-result = find_total(N)
-print(result[1])
-def min_total(arr, min_num):
-    used_list = [0]*6
-    for i in range(0, 3):
-        used_list[i] = 1
-        for j in range(3, 6):
-            if used_list[j] == 0:
-                used_list[j] = 1
-                for k in range(1, 5):
-                    total = 0
-                    if used_list[k] == 0:
-                        used_list[k] = 1
-                        total += arr[i]+arr[j]+arr[k]
-                        if min_num > total:
-                            min_num = total
-                            min_used_list = copy.deepcopy(used_list)
-                        used_list[k] = 0
-                used_list[j] = 0
-        used_list[i] = 0
-    return min_used_list
-
-def min_total2(arr, min_num):
-    used_list = [0]*6
-    for i in range(0, 3):
-        used_list[i] = 1
-        for j in range(3, 6):
-            # if used_list[j] == 0:
-            used_list[j] = 1
-            for k in range(1, 5):
-                total = 0
-                    # if used_list[k] == 0:
-                used_list[k] = 1
-                total += arr[i]+arr[j]+arr[k]
-                if min_num > total:
-                    min_num = total
-                    min_used_list = copy.deepcopy(used_list)
-                    used_list[k] = 0
-                used_list[j] = 0
-        used_list[i] = 0
-    return min_used_list
-# dfs(turn, 0)
+# import copy
+#
+# def min_except_zero(arr, min_num):
+#     for i in range(len(arr)):
+#         if arr[i] != 0 and min_num > arr[i]:
+#             min_num = arr[i]
+#     return min_num
+#
+# arr = list(map(int, input().split()))
+# level = int(input())
+# level_init = copy.deepcopy(level)
+# max_total = 0
+# def find_total(level, arr, total):
+#     global max_total
+#     form = [0, 3, 3, 6, 1, 5]
+#     if level == 0:
+#         if total > max_total:
+#             max_total = total
+#         return
+#     final_food = 0
+#     if level == 1:
+#         if level_init == 1:
+#             for i in range(3):
+#                 max_num = max(arr[form[i * 2]:form[i * 2 + 1]])
+#                 final_food += max_num
+#                 arr[arr.index(max_num)] = 0
+#         else:
+#             for i in range(6):
+#                 if arr[i] != 0:
+#                     final_food += arr[i]
+#         final_food = final_food*2**(level_init-1)
+#         find_total(level-1, arr, total+final_food)
+#
+#     else:
+#
+#         level_sum = 0
+#         for i in range(3):
+#             zero_cnt = 0
+#             for j in range(len(arr)):
+#                 if arr[j] == 0:
+#                     zero_cnt += 1
+#             if (level-1)*3 >= 6-zero_cnt:
+#                 min_num = min(arr[form[i*2]:form[i*2+1]])
+#                 level_sum += min_num
+#                 arr[arr.index(min_num)] = 0
+#             else:
+#                 min_num = min_except_zero(arr[form[i*2]:form[i*2+1]], 999)
+#                 level_sum += min_num
+#                 arr[arr.index(min_num)] = 0
+#
+#         level_sum = level_sum * 2 ** (level_init - level)
+#         find_total(level - 1, arr, total+level_sum)
+#
+# find_total(level, arr, 0)
 # print(max_total)
 
-# result = min_total(N, 999)
-# print(result)
+# 6번
+arr = list(input())
+N = int(input())
+
+def cal_score(arr):
+    score = 0
+    for i in range(len(arr)-1):
+        if arr[i] == arr[i+1]:
+            score -= 50
+        elif abs(ord(arr[i])-ord(arr[i+1])) <= 5:
+            score += 3
+        elif abs(ord(arr[i])-ord(arr[i+1])) >= 20:
+            score += 10
+    return score
+max_score = 0
+
+def dfs(level):
+    global max_score
+    if level == N:
+        score = cal_score(arr)
+        if max_score < score:
+            max_score = score
+        return
+
+    for i in range(len(arr)-1):
+        for j in range(i, len(arr)):
+            arr[i], arr[j] = arr[j], arr[i]
+            dfs(level+1)
+            arr[i], arr[j] = arr[j], arr[i]
+
+
+dfs(0)
+print(max_score)

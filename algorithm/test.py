@@ -1,118 +1,57 @@
-import copy
-# N = list(map(int, input().split()))
-#
-# # cnt = 0
-# def find_total(level, arr, total):
-#
-#     if level == 3:
-#
-#         return
-#     for i in range(6):
-#         backup = N[i]
-#         total += N[i]
-#         N[i] = 0
-#         find_total(level+1, total)
-#         N[i] = backup
-#
-# result = find_total(0,0)
-#
-# print(result)
-# # result = find_total(0, 0)
-# # print(result)
-
-def min_total2(arr, min_num):
-    used_list = [0]*6
-    for i in range(0, 3):
-        backup_1 = arr[i]
-        # used_list[i] = 1
-
-        # arr[i] = 0
-        for j in range(3, 6):
-            # if used_list[j] == 0:
-            backup_2 = arr[j]
-            # used_list[j] = 1
-            # arr[j] = 0
-            for k in range(1, 5):
-                total = 0
-                    # if used_list[k] == 0:
-                # used_list[k] = 1
-                total += arr[i]+arr[j]+arr[k]
-
-                if min_num > total:
-                    min_num = total
-                    min_used_list = copy.deepcopy(used_list)
-                    arr[k] = 0
-                arr[j] = 0
-        arr[i] = 0
-    return min_used_list
-
-# result = min_total2(N, 999)
-# print(result)
-arr = list(map(int, input().split()))
+N = int(input())
+arr = [list(input()) for _ in range(N)]
+b, a = map(int, input().split())
 
 
-# def find_total(level, arr, total):
-#     if level == 3:
-#         print(total, arr)
-#         return
-#     if level == 0:
-#         for i in range(0, 3):
-#             backup_sum1 = total
-#             total += arr[i]
-#             backup1 = arr[i]
-#             arr[i] = 0
-#             # print(arr, total)
-#             find_total(level+1, arr, total)
-#             arr[i] = backup1
-#             total = backup_sum1
-#     if level == 1:
-#         for i in range(3, 6):
-#             backup_sum2 = total
-#             total += arr[i]
-#             backup2 = arr[i]
-#             arr[i] = 0
-#             # print(arr, total)
-#             find_total(level+1, arr, total)
-#             arr[i] = backup2
-#             total = backup_sum2
-#     if level == 2:
-#         for i in range(1, 5):
-#             backup_sum3 = total
-#             total += arr[i]
-#             backup3 = arr[i]
-#             arr[i] = 0
-#             # print(arr, total)
-#             find_total(level+1, arr, total)
-#             arr[i] = backup3
-#             total = backup_sum3
-#
-# turn_result = find_total(0, arr, 0)
-#
-# print(turn_result)
-def min_except_zero(arr, min_num):
-    for i in range(len(arr)):
-        if arr[i] != 0 and min_num > arr[i]:
-            min_num = arr[i]
-    return min_num
+directy = [1, -1, 0, 0]
+directx = [0, 0, 1, -1]
+
+# 소화기 소지 유무
+A_have = False
+
+def bfs(y0, x0, y1, x1):
+    visited = [[0]*N for _ in range(N)]
+    queue = [(y0, x0, 0)]
+    visited[y0][x0] = 1
+    while queue:
+        y, x, level = queue.pop(0)
+
+        if y == y1 and x == x1:
+            return level
+
+        for i in range(4):
+            dx = directx[i]+x
+            dy = directy[i]+y
+            if 0 <= dx < N and 0 <= dy < N:
+                # 소화기를 가지고 있지 않을 땐 불 좌표에 접근 불가
+                if A_have == False and visited[dy][dx] == 0:
+                    if arr[dy][dx] != '#' and arr[dy][dx] != '$':
+                        visited[dy][dx] = 1
+                        queue.append([dy, dx, level+1])
+                elif A_have == True and visited[dy][dx] == 0:
+                    if arr[dy][dx] != '#':
+                        visited[dy][dx] = 1
+                        queue.append([dy, dx, level + 1])
+
+# 소화기 좌표와 불 좌표 저장
+A_list = []
+fire_loc = 0
+for i in range(N):
+    for j in range(N):
+        if arr[i][j] == 'A':
+            A_list.append([i, j])
+        if arr[i][j] == '$':
+            fire_loc = [i, j]
 
 
-def find_total(level, arr, total):
-    if level == 3:
-        print(total, arr)
-        return
+min_cnt = 999
+for i in range(len(A_list)):
+    cnt1 = bfs(b, a, A_list[i][0], A_list[i][1])
+    # 소화기 좌표를 구한 뒤에는 불에 접근 가능하도록 설정
+    A_have = True
+    cnt2 = bfs(A_list[i][0], A_list[i][1], fire_loc[0], fire_loc[1])
+    cnt = cnt1+cnt2
 
-    for i in range(len(arr)):
-        zero_cnt = 0
-        if arr[i] == 0:
-            zero_cnt += 1
-
-        if zero_cnt < 3:
-            min_num = min_except_zero(arr, 999)
-            total += min_num
-            arr[arr.index(min_num)] = 0
-
-        elif zero_cnt >= 3:
-
-
-
-
+    if min_cnt > cnt:
+        min_cnt = cnt
+print(min_cnt)

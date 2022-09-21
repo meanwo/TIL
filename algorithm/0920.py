@@ -106,6 +106,7 @@
 #     for x in range(5):
 #         if Map[y][x] == 1:
 #             print(bfs(y, x))
+
 # 각각 섬의 크기 구하기
 # from collections import deque
 #

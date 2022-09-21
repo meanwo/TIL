@@ -17,3 +17,11 @@ for i in range(10):
         if bucket[-1] == 0:
             bucket = bucket[0:-1]
     print(f'#%d %d' %(i+1, len(bucket)-1))
+
+
+# for i in range(len(numbers)):
+#     if numbers[i] == max(numbers):
+#         for j in range(len(numbers)):
+#             if numbers[j] == min(numbers):
+#                 numbers[i] -= 1
+#                 numbers[j] += 1

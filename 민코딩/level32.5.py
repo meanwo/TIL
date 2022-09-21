@@ -125,10 +125,12 @@
 #     print(*arr[i], sep= ' ')
 
 # 민코딩 level 32.5 7번
-arr = [list(map(int, input().split())) for _ in range(4)]
-sum_field = 0
-for i in range(4):
-    if 0 not in arr[i]:
-        for j in range(8):
-            sum_field += arr[i][j]
-print(sum_field)
+# arr = [list(map(int, input().split())) for _ in range(4)]
+# sum_field = 0
+# for i in range(4):
+#     if 0 not in arr[i]:
+#         for j in range(8):
+#             sum_field += arr[i][j]
+# print(sum_field)
+
+
