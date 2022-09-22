@@ -4,6 +4,7 @@ for i in range(10):
     bucket = [0]*101
     for j in range(len(box)):
         bucket[box[j]] += 1
+    print(bucket)
     while n:
         if bucket[0] != 0 and bucket[-1] != 0:
             bucket[0] -= 1
@@ -19,9 +20,3 @@ for i in range(10):
     print(f'#%d %d' %(i+1, len(bucket)-1))
 
 
-# for i in range(len(numbers)):
-#     if numbers[i] == max(numbers):
-#         for j in range(len(numbers)):
-#             if numbers[j] == min(numbers):
-#                 numbers[i] -= 1
-#                 numbers[j] += 1

@@ -172,61 +172,61 @@ import copy
 #         print(f'%d+' %(choose_number_lst[i]), end='')
 
 # 5번
-# import copy
-#
-# def min_except_zero(arr, min_num):
-#     for i in range(len(arr)):
-#         if arr[i] != 0 and min_num > arr[i]:
-#             min_num = arr[i]
-#     return min_num
-#
-# arr = list(map(int, input().split()))
-# level = int(input())
-# level_init = copy.deepcopy(level)
-# max_total = 0
-# def find_total(level, arr, total):
-#     global max_total
-#     form = [0, 3, 3, 6, 1, 5]
-#     if level == 0:
-#         if total > max_total:
-#             max_total = total
-#         return
-#     final_food = 0
-#     if level == 1:
-#         if level_init == 1:
-#             for i in range(3):
-#                 max_num = max(arr[form[i * 2]:form[i * 2 + 1]])
-#                 final_food += max_num
-#                 arr[arr.index(max_num)] = 0
-#         else:
-#             for i in range(6):
-#                 if arr[i] != 0:
-#                     final_food += arr[i]
-#         final_food = final_food*2**(level_init-1)
-#         find_total(level-1, arr, total+final_food)
-#
-#     else:
-#
-#         level_sum = 0
-#         for i in range(3):
-#             zero_cnt = 0
-#             for j in range(len(arr)):
-#                 if arr[j] == 0:
-#                     zero_cnt += 1
-#             if (level-1)*3 >= 6-zero_cnt:
-#                 min_num = min(arr[form[i*2]:form[i*2+1]])
-#                 level_sum += min_num
-#                 arr[arr.index(min_num)] = 0
-#             else:
-#                 min_num = min_except_zero(arr[form[i*2]:form[i*2+1]], 999)
-#                 level_sum += min_num
-#                 arr[arr.index(min_num)] = 0
-#
-#         level_sum = level_sum * 2 ** (level_init - level)
-#         find_total(level - 1, arr, total+level_sum)
-#
-# find_total(level, arr, 0)
-# print(max_total)
+import copy
+
+def min_except_zero(arr, min_num):
+    for i in range(len(arr)):
+        if arr[i] != 0 and min_num > arr[i]:
+            min_num = arr[i]
+    return min_num
+
+arr = list(map(int, input().split()))
+level = int(input())
+level_init = copy.deepcopy(level)
+max_total = 0
+def find_total(level, arr, total):
+    global max_total
+    form = [0, 3, 3, 6, 1, 5]
+    if level == 0:
+        if total > max_total:
+            max_total = total
+        return
+    final_food = 0
+    if level == 1:
+        if level_init == 1:
+            for i in range(3):
+                max_num = max(arr[form[i * 2]:form[i * 2 + 1]])
+                final_food += max_num
+                arr[arr.index(max_num)] = 0
+        else:
+            for i in range(6):
+                if arr[i] != 0:
+                    final_food += arr[i]
+        final_food = final_food*2**(level_init-1)
+        find_total(level-1, arr, total+final_food)
+
+    else:
+
+        level_sum = 0
+        for i in range(3):
+            zero_cnt = 0
+            for j in range(len(arr)):
+                if arr[j] == 0:
+                    zero_cnt += 1
+            if (level-1)*3 >= 6-zero_cnt:
+                min_num = min(arr[form[i*2]:form[i*2+1]])
+                level_sum += min_num
+                arr[arr.index(min_num)] = 0
+            else:
+                min_num = min_except_zero(arr[form[i*2]:form[i*2+1]], 999)
+                level_sum += min_num
+                arr[arr.index(min_num)] = 0
+
+        level_sum = level_sum * 2 ** (level_init - level)
+        find_total(level - 1, arr, total+level_sum)
+
+find_total(level, arr, 0)
+print(max_total)
 
 # 6번
 arr = list(input())
