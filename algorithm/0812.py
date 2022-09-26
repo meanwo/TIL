@@ -76,46 +76,46 @@
 #1
 A = [[4, 7, 1, 8], [5, 5, 9, 2], [5, 9, 5, 9], [1, 2, 9, 7]]
 #
-# sum_around = 0
-# max_sum = 0
-# max_index = [0, 0]
-# dx = [1, -1, 0, 0]
-# dy = [0, 0, -1, 1]
-#
-# for i in range(4):
-#     for j in range(4):
-#         sum_around = 0
-#         for k in range(4):
-#             if i+dy[k] >= 0 and i+dy[k] <= 3 and j+dx[k] >= 0 and j+dx[k] <= 3:
-#                 sum_around += A[i+dy[k]][j+dx[k]]
-#                 if sum_around > max_sum:
-#                     max_sum = sum_around
-#                     max_index = (i, j)
-#
-# print(max_sum, max_index)
+sum_around = 0
+max_sum = 0
+max_index = [0, 0]
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
+
+for i in range(4):
+    for j in range(4):
+        sum_around = 0
+        for k in range(4):
+            if i+dy[k] >= 0 and i+dy[k] <= 3 and j+dx[k] >= 0 and j+dx[k] <= 3:
+                sum_around += A[i+dy[k]][j+dx[k]]
+        if sum_around > max_sum:
+            max_sum = sum_around
+            max_index = (i, j)
+
+print(max_sum, max_index)
 
 # 2
 
-sum_diagonal = [0]*(2*len(A)-1)
-
-# for i in range(2*len(A)-1):
-for i in range(4):
-    for j in range(4):
-        for k in range(-3, 4):
-            if i-j == k:
-                sum_diagonal[k+3] += A[i][j]
-
-# 우상단 부터 시작
-print(sum_diagonal)
-
-#3
-sum_upper = 0
-sum_lower = 0
-for i in range(4):
-    for j in range(4):
-        if i > j:
-            sum_lower += A[i][j]
-        elif i < j:
-            sum_upper += A[i][j]
-
-print(sum_upper, sum_lower)
+# sum_diagonal = [0]*(2*len(A)-1)
+#
+# # for i in range(2*len(A)-1):
+# for i in range(4):
+#     for j in range(4):
+#         for k in range(-3, 4):
+#             if i-j == k:
+#                 sum_diagonal[k+3] += A[i][j]
+#
+# # 우상단 부터 시작
+# print(sum_diagonal)
+#
+# #3
+# sum_upper = 0
+# sum_lower = 0
+# for i in range(4):
+#     for j in range(4):
+#         if i > j:
+#             sum_lower += A[i][j]
+#         elif i < j:
+#             sum_upper += A[i][j]
+#
+# print(sum_upper, sum_lower)

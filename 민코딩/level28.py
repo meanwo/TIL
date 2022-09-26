@@ -19,65 +19,65 @@
 # print(name[max_index])
 
 # 민코딩 level28 2번
-n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-# print(arr)
-
-boss_list =[]
-under_list = []
-for i in range(n):
-    if arr[i][0] == 1:
-        boss_list.append(i)
-print('boss:', end ='')
-
-for i in range(len(boss_list)):
-    print(boss_list[i], end = ' ')
-    print()
-
-for i in range(n):
-    if arr[0][i] == 1:
-        under_list.append(i)
-print('under:', end ='')
-
-for i in range(len(under_list)):
-    print(under_list[i], end = ' ')
+# n = int(input())
+# arr = [list(map(int, input().split())) for _ in range(n)]
+# # print(arr)
+#
+# boss_list =[]
+# under_list = []
+# for i in range(n):
+#     if arr[i][0] == 1:
+#         boss_list.append(i)
+# print('boss:', end ='')
+#
+# for i in range(len(boss_list)):
+#     print(boss_list[i], end = ' ')
+#     print()
+#
+# for i in range(n):
+#     if arr[0][i] == 1:
+#         under_list.append(i)
+# print('under:', end ='')
+#
+# for i in range(len(under_list)):
+#     print(under_list[i], end = ' ')
 
 
 # 민코딩 level28 3번
-# arr = [[0, 1, 1, 0, 0, 0, 0, 1],
-#        [0, 0, 0, 0, 0, 0, 0, 0],
-#        [0, 0, 0, 1, 1, 0, 1, 0],
-#        [0, 0, 0, 0, 0, 1, 0, 0],
-#        [0, 0, 0, 0, 0, 0, 0, 0],
-#        [0, 0, 0, 0, 0, 0, 0, 0],
-#        [0, 0, 0, 0, 0, 0, 0, 0]]
-#
-# name = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-#
-# n = input()
-# now = name.index(n)
-# parents_index = 999
-# bro_index = []
-# flag = 0
-#
-# def dfs(now):
-#     for i in range(len(arr)):
-#         if arr[i][now] == 1:
-#             parents_index = i
-#
-#     for i in range(len(arr[0])):
-#         if arr[parents_index][i] == 1:
-#             bro_index.append(i)
-#
-# if now == 0:
-#     print('없음')
-# else:
-#     result = dfs(now)
-# # print(result)
-#     bro_index.remove(now)
-#
-# for i in range(len(bro_index)):
-#     print(name[bro_index[i]], end= ' ')
+arr = [[0, 1, 1, 0, 0, 0, 0, 1],
+       [0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 1, 1, 0, 1, 0],
+       [0, 0, 0, 0, 0, 1, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0]]
+
+name = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+n = input()
+now = name.index(n)
+parents_index = 999
+bro_index = []
+flag = 0
+
+def dfs(now):
+    for i in range(len(arr)):
+        if arr[i][now] == 1:
+            parents_index = i
+
+    for i in range(len(arr[0])):
+        if arr[parents_index][i] == 1:
+            bro_index.append(i)
+
+if now == 0 or 5:
+    print('없음')
+else:
+    result = dfs(now)
+# print(result)
+    bro_index.remove(now)
+
+for i in range(len(bro_index)):
+    print(name[bro_index[i]], end= ' ')
 
 # 민코딩 level28 4번
 # n = int(input())

@@ -80,7 +80,7 @@
 #     for i in range(6):
 #         if arr[now][i]==1:
 #             dfs(i)
-#
+# #
 # dfs(0)  # 0번 인덱스 부터 깊이우선 탐색 시작
 # print(*answer)
 # name=list(input().split())
@@ -104,27 +104,27 @@
 # print(*ans)
 
 # C부터 깊이우선 탐색 시작
-# arr = [[0, 1, 0, 0],
-#        [0, 0, 1, 1],
-#        [1, 0, 0, 1],
-#        [0, 0, 0, 0]]
-# name = ['A', 'B', 'C', 'D']
-# ans =[]
-# used = [0]*4
-# # C에 1을 체크하고  dfs 에 들어가기
-# used[2] = 1
-#
-# def dfs(now):
-#     global ans
-#     ans.append(name[now])
-#     for i in range(len(arr)):
-#         if used[i] == 1: continue
-#         used[i] = 1
-#         if arr[now][i] == 1:
-#             dfs(i)
-#
-# result = dfs(2)
-# print(*ans)
+arr = [[0, 1, 0, 0],
+       [0, 0, 1, 1],
+       [1, 0, 0, 1],
+       [0, 0, 0, 0]]
+name = ['A', 'B', 'C', 'D']
+ans =[]
+used = [0]*4
+# C에 1을 체크하고  dfs 에 들어가기
+used[2] = 1
+
+def dfs(now):
+    global ans
+    ans.append(name[now])
+    for i in range(len(arr)):
+        if used[i] == 1: continue
+        used[i] = 1
+        if arr[now][i] == 1:
+            dfs(i)
+
+result = dfs(2)
+print(*ans)
 
 # A부터 D 까지의 경로 갯수 구하기
 # name=list(input().split())  # B A C D
