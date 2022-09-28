@@ -86,17 +86,17 @@ import heapq
 # 시작점부터 도착점까지 가능 최소비용 구하기
 # 시작점에서 도착점까지 바로가는 비용 vs 경유지를 거쳐 도착점까지 가는 비용 중 최소인 것으로 계속 업데이트
 
-N = 5
-name = 'ABCDE'
-arr = [[0, 3, 999, 9, 5], [999, 0, 7, 999, 1], [999, 999, 0, 1, 999], [999, 999, 999, 0, 999], [999, 999, 1, 999, 0]]
-used = [0] * 5
-result = [0] * 5
-
-
-# A를 시작점으로 간주
-used[0] = 1
-for i in range(N):
-    result[i] = arr[0][i]
+# N = 5
+# name = 'ABCDE'
+# arr = [[0, 3, 999, 9, 5], [999, 0, 7, 999, 1], [999, 999, 0, 1, 999], [999, 999, 999, 0, 999], [999, 999, 1, 999, 0]]
+# used = [0] * 5
+# result = [0] * 5
+#
+#
+# # A를 시작점으로 간주
+# used[0] = 1
+# for i in range(N):
+#     result[i] = arr[0][i]
 
 # def select_ky():
 #     Min = int(21e8)
@@ -147,35 +147,38 @@ for i in range(N):
 # 0 3
 # 시작점, 도착점 (0번 인덱스에서 3번 인덱스 까지의 최소 비용을 구하겠다.)
 
-name='ABCDE'
-n=int(input())
-m=int(input())
-arr=[[] for _ in range(n)]
-for _ in range(m):
-    a,b,c=map(int,input().split())
-    arr[a].append((b,c))
-print(arr)
-start,ed=map(int,input().split())
-inf=int(21e8)
-result=[inf]*n
-heap=[]
+# name='ABCDE'
+# n=int(input())
+# m=int(input())
+# arr=[[] for _ in range(n)]
+# for _ in range(m):
+#     a,b,c=map(int,input().split())
+#     arr[a].append((b,c))
+# print(arr)
+# start,ed=map(int,input().split())
+# inf=int(21e8)
+# result=[inf]*n
+# heap=[]
+#
+# def dijkstra(start):
+#     heapq.heappush(heap,(0,start))   # 처음에는 시작점을 경유지로 놓기 (비용 경유지)
+#     result[start]=0                  # 그 다음 부터는 heapq에서 최소 비용을 다음 경유지로 선택
+#
+#     while heap:
+#         print(heap)
+#         sk,k=heapq.heappop(heap)    # sk=시작점에서 경유지 까지 비용  그리고  k= 경유지
+#
+#         if result[k]<sk: continue   #  result 에서의 업데이트 되어있는 시작점에서->경유지 값 vs
+#         # 큐에서 방금 뽑은 시작점에서->경유지 값 이랑 비교
+#
+#         for i in arr[k]:   # 모든 정점에 대해서 (경유지에서 도착할 수 있는 정점을 비교)
+#             cost=sk+i[1]   # cost = 시->경유지 비용 + 경유지에서 도착점까지 최소비용
+#             if cost<result[i[0]]:
+#                 result[i[0]]=cost
+#                 heapq.heappush(heap,(cost,i[0]))
+#
+# dijkstra(start)
+# print(*result)
 
-def dijkstra(start):
-    heapq.heappush(heap,(0,start))   # 처음에는 시작점을 경유지로 놓기 (비용 경유지)
-    result[start]=0                  # 그 다음 부터는 heapq에서 최소 비용을 다음 경유지로 선택
-
-    while heap:
-        print(heap)
-        sk,k=heapq.heappop(heap)    # sk=시작점에서 경유지 까지 비용  그리고  k= 경유지
-
-        if result[k]<sk: continue   #  result 에서의 업데이트 되어있는 시작점에서->경유지 값 vs
-        # 큐에서 방금 뽑은 시작점에서->경유지 값 이랑 비교
-
-        for i in arr[k]:   # 모든 정점에 대해서 (경유지에서 도착할 수 있는 정점을 비교)
-            cost=sk+i[1]   # cost = 시->경유지 비용 + 경유지에서 도착점까지 최소비용
-            if cost<result[i[0]]:
-                result[i[0]]=cost
-                heapq.heappush(heap,(cost,i[0]))
-
-dijkstra(start)
-print(*result)
+for i in range(1, -3, -2):
+    print(i)
