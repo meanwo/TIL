@@ -179,6 +179,3 @@ import heapq
 #
 # dijkstra(start)
 # print(*result)
-
-for i in range(1, -3, -2):
-    print(i)
