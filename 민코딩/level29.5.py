@@ -128,21 +128,21 @@
 #         print(*map_list, sep ='')
 
 # 민코딩 level29.5 8번
-# arr = [list(input()) for _ in range(4)]
-# # print(arr)
-# dx = [1, 0, -1, 0, 1]
-# dy = [0, 1, 0, -1, 0]
-#
-# for i in range(5):
-#     for j in range(4):
-#         for k in range(3):
-#             if arr[j][k].isalpha():
-#                 if j+dy[i] >= 0 and j+dy[i] <= 3 and k+dx[i] >=0 and k+dx[i] <= 2:
-#                     if arr[j+dy[i]][k+dx[i]] == '_':
-#                         arr[j][k], arr[j+dy[i]][k+dx[i]] = arr[j+dy[i]][k+dx[i]], arr[j][k]
-#
-# for i in range(4):
-#     print(*arr[i], sep='')
+arr = [list(input()) for _ in range(4)]
+# print(arr)
+dx = [1, 0, -1, 0, 1]
+dy = [0, 1, 0, -1, 0]
+
+for i in range(5):
+    for j in range(4):
+        for k in range(3):
+            if arr[j][k].isalpha():
+                if j+dy[i] >= 0 and j+dy[i] <= 3 and k+dx[i] >=0 and k+dx[i] <= 2:
+                    if arr[j+dy[i]][k+dx[i]] == '_':
+                        arr[j][k], arr[j+dy[i]][k+dx[i]] = arr[j+dy[i]][k+dx[i]], arr[j][k]
+
+for i in range(4):
+    print(*arr[i], sep='')
 
 # 민코딩 level29.5 9번
 # A = [list(input()) for _ in range(2)]

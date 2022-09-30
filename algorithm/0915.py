@@ -1,58 +1,69 @@
 # 정점의 개수 5
 # 간선의 개수 8
 
+# 간선 정보
+# A C 3
+# C E 5
+# A E 7
+# A B 9
+# B D 11
+# B C 14
+# A D 20
+
 # 정점 V 연결을 위한 최소 간선 횟수 E = V-1
 
 # 크루스칼 알고리즘 핵심
-# 비용 기준으로 오름차순 정렬.
+# 비용 기준으로 오름차순 정렬
 # 사이클이 발생하지 않도록(최소 연결을 구현하기 위해) union, find 활용
 # E= V-1 일 때 연산 종료
 
-# V = int(input())
-# E = int(input())
-# arr=[0]*200
-# info_list = []
-# for i in range(E):
-#     a, b, cost = input().split()
-#     cost = int(cost)
-#     info_list.append([a, b, cost])
-# sort_list = sorted(info_list, key=lambda x: x[2])
-#
-# def findboss(member):
-#     global arr
-#     if arr[ord(member)] == 0:
-#         return member
-#     ret = findboss(arr[ord(member)])
-#     # 최상위 부모를 찾을 때 계산 과정을 줄여주는 부분
-#     arr[ord(member)]=ret
-#     return ret
-#
-# # union 함수
-# def union(a,b):
-#     global arr
-#
-#     fa,fb=findboss(a), findboss(b)
-#     if fa == fb:return 1
-#     arr[ord(fb)]=fa
-#
-# sum_cost = 0
-# cnt = 0
-#
-# # 최소 비용 구하는 함수
-# def minumum_cost(E):
-#     global sort_list, sum_cost, cnt
-#     for i in range(E):
-#         if cnt == V-1:
-#             break
-#         a, b = sort_list[i][0], sort_list[i][1]
-#         ret = union(a, b)
-#         if ret == 1:
-#             continue
-#         sum_cost += sort_list[i][2]
-#         cnt += 1
-#
-# result = minumum_cost(E)
-# print(sum_cost)
+V = int(input())
+E = int(input())
+arr = [0]*200
+info_list = []
+for i in range(E):
+    a, b, cost = input().split()
+    cost = int(cost)
+    info_list.append([a, b, cost])
+sort_list = sorted(info_list, key=lambda x: x[2])
+
+print(sort_list)
+
+def findboss(member):
+    global arr
+    if arr[ord(member)] == 0:
+        return member
+    ret = findboss(arr[ord(member)])
+    # 최상위 부모를 찾을 때 계산 과정을 줄여주는 부분
+    arr[ord(member)]=ret
+    return ret
+
+# union 함수
+def union(a,b):
+    global arr
+
+    fa,fb=findboss(a), findboss(b)
+    if fa == fb:return 1
+    arr[ord(fb)]=fa
+
+sum_cost = 0
+cnt = 0
+
+# 최소 비용 구하는 함수
+def minumum_cost(E):
+    global sort_list, sum_cost, cnt
+    for i in range(E):
+        if cnt == V-1:
+            break
+        a, b = sort_list[i][0], sort_list[i][1]
+        ret = union(a, b)
+        if ret == 1:
+            continue
+        sum_cost += sort_list[i][2]
+        cnt += 1
+
+result = minumum_cost(E)
+print(sum_cost)
 
 
 # 각 항에서 1~4 사이의 숫자를 1개씩 택해서 다
