@@ -68,7 +68,7 @@
 
 
 # union find 자료구조를 이용하여 양방향 그래프에서의 cycle 존재여부 확인
-# 최상위 부모가 같은 노드끼리 연결되면 cycle 발생
+# '최상위 부모가 같은 노드' 끼리 연결되면 cycle 발생
 n = int(input())
 edge = []
 for _ in range(n):
