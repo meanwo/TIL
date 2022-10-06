@@ -1,20 +1,11 @@
 from collections import deque
 import copy
-# 폭탄 경로 문제
-N, W, H = map(int, input().split())
-arr = [list(map(int, input().split())) for _ in range(H)]
-new_arr = [[0]*W for _ in range(H)]
-# new_arr = [deque() for _ in range(W)]
-# print(new_arr)
-directy = [1, -1, 0, 0]
-directx = [0, 0, 1, -1]
 
 def bfs(y1, x1):
     global arr
     q = deque()
     new_arr = [[0]*W for _ in range(H)]
 
-    # for i in range(4):
     q.append((y1, x1))
 
     while q:
@@ -28,7 +19,7 @@ def bfs(y1, x1):
                     if not (0 <= dy < H and 0 <= dx < W): continue
                     if arr[dy][dx] == 0: continue
                     q.append((dy,dx))
-                    arr[dy][dx] = 0
+                    # arr[dy][dx] = 0
         arr[y][x] = 0
 
     # i : 열, j : 행
@@ -43,7 +34,7 @@ def bfs(y1, x1):
 def choice_ball(arr):
 
     loc_list = []
-    print(arr)
+    # print(arr)
     for i in range(W):
         for j in range(H):
             if arr[j][i] != 0:
@@ -51,10 +42,6 @@ def choice_ball(arr):
                 break
     return loc_list
 
-
-
-
-min_total =21e8
 def dfs(level):
     global min_total, arr, min_arr
     if level == N:
@@ -69,30 +56,31 @@ def dfs(level):
         return
 
     next_ball = choice_ball(arr)
-    print(next_ball)
+    # print(next_ball)
+    if len(next_ball) == 0:
+        min_total = 0
+        return
     for i in range(len(next_ball)):
-        backup = arr
+        backup = copy.deepcopy(arr)
         bfs(next_ball[i][0], next_ball[i][1])
         dfs(level+1)
         arr = backup
 
-#
-# bfs(1, 2)
-# bfs(2, 2)
-# bfs(8, 6)
-# print(arr)
-# cnt = 0
-# for i in range(H):
-#     for j in range(W):
-#         if arr[i][j] != 0:
-#             cnt += 1
-# print(cnt)
+T = int(input())
+for test_case in range(1, T+1):
+    N, W, H = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(H)]
+    new_arr = [[0]*W for _ in range(H)]
+    directy = [1, -1, 0, 0]
+    directx = [0, 0, 1, -1]
+    min_total =21e8
 
-dfs(0)
-print(min_total)
-print(min_arr)
+
+    dfs(0)
+    print(f'#%d %d' %(test_case, min_total))
+
 # 1 4 4
 # 0 0 0 0
 # 2 0 0 1
 # 2 0 0 1
-# 1 1 0 0
+# 1 1 0 1
