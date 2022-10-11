@@ -1,46 +1,51 @@
-T = int(input())
-for test_case in range(1, T+1):
-    N, M = map(int, input().split())
-    arr = [list(map(int, input().split())) for _ in range(N)]
+import copy
 
-    total_home_cnt = 0
-    for i in range(N):
-        for j in range(N):
-            if arr[i][j] != 0:
-                total_home_cnt += 1
 
-    max_profit = M*total_home_cnt
-    # print(max_profit)
-    K = 1
-    over_cost = 1
-    while max_profit > over_cost:
-        K += 1
-        over_cost = 2*K**2-2*K+1
-    # print(over_cost)
-    # print(K)
+def find_max(total, y1, x1, idx, honey):
+    global max_total
 
-    flag = 0
-    K -= 1
-    for a in range(K, -1, -1):
-        cost = 2*a**2-2*a+1
-        # print(cost)
-        for i in range(N):
-            for j in range(N):
-                home_cnt = 0
-                for k in range(-(K-1), K):
-                    for l in range(-(K-abs(k)-1), K-abs(k)):
-                        if not (0 <= i+k < N and 0 <= j+l < N): continue
-                        if arr[i+k][j+l] == 1:
-                            home_cnt += 1
-                if home_cnt*M > cost:
-                    print(f'#%d %d' %(test_case,home_cnt))
-                    # print(cost)
-                    # print(a)
-                    flag = 1
-                    # target_K = a
-                    # target_cnt = home_cnt
-                    break
-            if flag == 1:
-                break
-        if flag == 1:
-            break
+    if idx == M or honey < arr[y1][x1]:
+        if max_total < total:
+            max_total = total
+        return
+    else:
+        backup_honey = honey
+        backup_total = copy.deepcopy(total)
+        honey -= arr[y1][x1]
+        total += arr[y1][x1]**2
+        find_max(total, y1, x1+1, idx+1, honey)
+        honey = backup_honey
+        total = backup_total
+        find_max(total, y1, x1+1, idx+1, honey)
+        # honey += arr[y1][x1]
+        # total -= arr[y1][x1] ** 2
+
+N, M, C = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(N)]
+# max_result = 0
+square_arr = [[0]*(N-M+1) for _ in range(N)]
+# part_used = [[0]*M]
+# used = [[0]*(N-M+1) for _ in range(N)]
+for i in range(N):
+    for j in range(N-M+1):
+        total = 0
+        max_total = 0
+        find_max(0, i, j, 0, C)
+        square_arr[i][j] = max_total
+
+print(square_arr)
+
+# max_total = 0
+# find_max(0, 0, 1, 0, C)
+# print(max_total)
+
+# 4 3 12
+# 8 8 6 5
+# 5 2 7 4
+# 8 5 1 7
+# 7 8 9 4
+
+# 3 2 10
+# 1 3 9
+# 2 4 9
+# 3 3 9
