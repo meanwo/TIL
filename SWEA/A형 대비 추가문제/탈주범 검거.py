@@ -16,9 +16,10 @@ def bfs(y1, x1, L):
     cnt = 0
     q = deque()
     q.append((y1, x1, L))
-
+    used[y1][x1] = 1
     while q:
         y, x, time = q.popleft()
+        cnt += 1
         if arr[y][x] != 0:
             for i in range(len(direct[arr[y][x]])):
                 dy = y+direct[arr[y][x]][i][0]
@@ -28,11 +29,10 @@ def bfs(y1, x1, L):
                 for j in range(len(direct[arr[dy][dx]])):
                     dy2 = dy+direct[arr[dy][dx]][j][0]
                     dx2 = dx+direct[arr[dy][dx]][j][1]
-                    if not (0 <= dy < N and 0 <= dx < M): continue
+                    if not (0 <= dy2 < N and 0 <= dx2 < M): continue
                     if dy2 == y and dx2 == x and time > 1:
                         used[dy][dx] = 1
                         q.append((dy, dx, time-1))
-                        cnt += 1
                         break
 
 
