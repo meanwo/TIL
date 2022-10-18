@@ -1,7 +1,11 @@
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from django.shortcuts import render
 from django.http.response import JsonResponse, HttpResponse
 from django.core import serializers
 from .models import Article
+from .serializers import ArticleSerializer
 
 
 # Create your views here.
@@ -35,6 +39,10 @@ def article_json_2(request):
     data = serializers.serialize('json', articles, fields=('title', 'content',))
     return HttpResponse(data, content_type='application/json')
 
-
+# default : GET
+# @api_view(['GET'])
+@api_view()
 def article_json_3(request):
-    pass
+    articles = Article.objects.all()
+    serializer = ArticleSerializer(articles, many=True)
+    return Response(serializer.data)
