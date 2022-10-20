@@ -5,22 +5,23 @@ const products = [
   { name: 'apple', type: 'fruit' },
 ]
 
-const fruitFilter = function (product) {
-  return product.type === 'fruit'
-}
 
-const newArry = products.filter(fruitFilter)
+// const fruitFilter = function (product) {
+//   return product.type === 'fruit'
+// }
 
-console.log(newArry)
+// const newArry = products.filter(fruitFilter)
+
+// console.log(newArry)
 
 
-// 2.
+// // 2.
 
-const newArry = products.filter(function (product) {
-  return product.type === 'fruit'
-})
+// const newArry = products.filter(function (product) {
+//   return product.type === 'fruit'
+// })
 
-// 3. 
-const newArry = products.filter((product) => {
-  return product.type === 'fruit'
-})
+// // 3. 
+// const newArry = products.filter((product) => {
+//   return product.type === 'fruit'
+// })
