@@ -19,6 +19,6 @@ const numbers = [1, 2, 3, 4, 5]
 // })
 
 // // 4.
-const newArry = numbers.map((number) => number * 2)
+// const newArry = numbers.map((number) => number * 2)
 
 
