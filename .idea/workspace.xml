@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="855b83cc-9436-498c-9c62-4dc5f73ee35a" name="Default Changelist" comment="10/18 #2">
-      <change afterPath="$PROJECT_DIR$/js/02_js/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/01_select.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/02_create_append.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/03_attribute.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/01_button.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/02_input.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/03_button_input.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/04_prevent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/05_lotto.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/06_todo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/03_js/event/07_this.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jsproblem/3_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jsproblem/데일리 실습_js_03_1_P.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/01_js/01_foreach.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/01_js/01_foreach.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/01_js/02_map.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/01_js/02_map.js" afterDir="false" />
-    </list>
+    <list default="true" id="855b83cc-9436-498c-9c62-4dc5f73ee35a" name="Default Changelist" comment="10/24 #1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +38,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666081955766</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="10/24 #1">
+      <created>1666601903642</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666601903642</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,6 +62,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="10/18 #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="10/18 #2" />
+    <MESSAGE value="10/24 #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="10/24 #1" />
   </component>
 </project>
