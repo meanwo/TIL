@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<body>
+    <div id="lunchMenu">
+        <h1>점심메뉴</h1>
+        <button @click="pickOne">Pick One</button>
+        <p>{{ menu }}</p>
+    </div>
+
+    <hr>
+
+    <div id="loto">
+        <h1>로또번호 생성기</h1>
+        <button @click="getLotto">Pick One</button>
+        <p>{{ pick }}</p>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script>
+    const app = new Vue({
+        el: '#lunchMenu',
+        data: {
+            menus: ['돼갈찜', '참치김치찌개', '라면', '스팸볶음밥'],
+            menu: '메뉴를 선택하세요'
+        },
+        methods : {
+            pickOne() {
+                this.menu = _.sample(this.menus)
+            }
+        }
+    })
+    const app2 = new Vue({
+        el: '#loto',
+        data: {
+            pick:[],
+        },
+        methods: {
+            getLotto() {
+                const numbers = _.range(1, 46)
+                this.pick=_.sampleSize(numbers, 6)
+            }
+        }
+    })  
+  </script>
+</body>
+</html>

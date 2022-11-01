@@ -10,14 +10,30 @@
   <div id="app">
     <h1>Popular Movies</h1>
     <div>
+<<<<<<< HEAD
       <li>
       </li>
+=======
+      <li
+        v-for="movie in movies"
+        :key="movie.id"
+        >
+        {{ movie.title }}
+        </li>
+>>>>>>> 1194bcfd1a7e5196242fbf8a57c53c3bfe083024
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
+      computed: {
+        movies() {
+            return this.movieinfo.results.filter((movie) => {
+                return movie.vote_average >= 8
+            })
+        }
+      },
       data: {
         movieinfo : {
           "page": 1,
@@ -420,14 +436,6 @@
     "total_results": 10000
   }
       },
-      computed: {
-
-        getOverEightScore: function () {
-          return this.movieinfo.results.filter((score) => {
-            return score > 8
-          })
-        }
-      }
     })
   </script>
 </body>
