@@ -12,7 +12,9 @@
   </div>
 </template>
 
+
 <style scoped>
+/* scoped가 없으면 전역적으로 설정 */
 .box {
   background-color: pink;
 }

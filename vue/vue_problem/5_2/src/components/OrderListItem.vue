@@ -11,8 +11,8 @@ export default {
     order: Object,
   },
   computed: {
-    // totalPrice: function () {
-    // },
+    totalPrice: function () {
+    },
   },
 }
 </script>

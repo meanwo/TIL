@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <h1>Coffee Order App</h1>
-    <MenuList/>
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col><MenuList/></b-col>
+        <b-col><SizeList/></b-col>
+      </b-row>
+    </b-container>
     <OptionList/>
     <OrderList/>
-    <SizeList/>
+
     <button @click="shoppingCart">장바구니에 담기</button>
   </div>
 </template>

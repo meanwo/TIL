@@ -1,6 +1,9 @@
 <template>
  <h3>
-    <button @click="updateSizeList"> 선택 </button> 
+    <button style="width:100%" 
+    @click="updateSizeList"
+    :class= "{'is-selected' : size.selected}" class="my-2"
+    >선택 </button> 
     {{ size.name }}
     <br>
   <div>
@@ -25,4 +28,7 @@ export default {
 </script>
 
 <style>
+  .is-selected {
+    background-color: green;
+  }
 </style>
