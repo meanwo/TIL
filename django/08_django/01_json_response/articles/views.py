@@ -27,7 +27,6 @@ def article_json_1(request):
                 'content': article.content,
                 'created_at': article.created_at,
                 'updated_at': article.updated_at,
-
             }
         )
     return JsonResponse(articles_json, safe=False)
