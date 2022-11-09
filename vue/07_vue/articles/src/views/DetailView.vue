@@ -1,11 +1,14 @@
 <template>
   <div>
     <h1>Detail</h1>
+    <!-- optional chaining(?.) -> article 객체가 있을 때만 출력 -->
     <p>글 번호 : {{ article?.id }}</p>
     <p>제목 : {{ article?.title }}</p>
     <p>내용 : {{ article?.content }}</p>
     <!-- <p>작성시간 : {{ article?.createAt }}</p> -->
-    <p>작성시간 : </p>
+    <p>작성시간 : {{ articleCreatedAt }}</p>
+    <button @click="deleteArticle">삭제</button>
+    <router-link :to="{ name: 'index'}"> 뒤로가기 </router-link>
   </div>
 </template>
 
@@ -18,7 +21,7 @@ export default {
         }
     },
     computed: {
-        articleCreated(){
+        articleCreatedAt(){
             const article = this.article
             const createdAt = new Date(article?.createdAt).toLocaleString()
             return createdAt
@@ -35,7 +38,16 @@ export default {
                     break
                 }
             }
+            if (!this.article){
+                this.$router.push({name:'NotFound404'})
+
+            }
+        },
+        deleteArticle() {
+            this.$store.commit('DELETE_ARTICLE', this.article.id)
+            this.$router.push({ name: 'index'})
         }
+
     },
 
     created() {
