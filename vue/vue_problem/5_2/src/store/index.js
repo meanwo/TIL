@@ -47,6 +47,7 @@ export default new Vuex.Store({
   },
   mutations: {
     ADD_ORDER: function (state) {
+      state.orderList = []
       const order_menu = state.menuList.filter(menu => 
         menu.selected === true)
       const order_size = state.sizeList.filter(size =>

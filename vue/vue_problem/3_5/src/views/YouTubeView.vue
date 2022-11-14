@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+        <!-- {{ videos }} -->
         <h1 class='text-primary'>SSAFY TUBE</h1>
     </div>
     <section v-if='isselectedVideo' class='mt-2'>

@@ -23,6 +23,7 @@ export default {
   methods:{
     updateMenuList() {
       this.$store.dispatch('updateMenuList', this.menu)
+      // this.$store.dispatch('')
     }
   }
 }

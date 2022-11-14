@@ -5,12 +5,12 @@
       <b-row>
         <b-col><MenuList/></b-col>
         <b-col><SizeList/></b-col>
+        <button @click="shoppingCart">장바구니에 담기</button>
       </b-row>
     </b-container>
     <OptionList/>
     <OrderList/>
 
-    <button @click="shoppingCart">장바구니에 담기</button>
   </div>
 </template>
 
