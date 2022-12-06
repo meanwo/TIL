@@ -36,27 +36,37 @@
 // console.log(myObj.ssafy) 
 
 
-const jsonData = {
-  coffee: 'Americano',
-  iceCream: 'Mint Choco',
+// const jsonData = {
+//   coffee: 'Americano',
+//   iceCream: 'Mint Choco',
+// }
+
+// // Object -> json
+// const objToJson = JSON.stringify(jsonData)
+
+// console.log(objToJson)  // {"coffee":"Americano","iceCream":"Mint Choco"}
+// console.log(typeof objToJson)  // string
+
+
+// // json -> Object
+// const jsonToObj = JSON.parse(objToJson)  // { coffee: 'Americano', iceCream: 'Mint Choco' }
+// console.log(jsonToObj)
+// console.log(typeof jsonToObj)  // object
+// console.log(jsonToObj.coffee)  // Americano
+
+
+
+
+let a = ''
+if (a) {
+  console.log(true)
+} else {
+  console.log(false)
 }
 
-// Object -> json
-const objToJson = JSON.stringify(jsonData)
-
-console.log(objToJson)  // {"coffee":"Americano","iceCream":"Mint Choco"}
-console.log(typeof objToJson)  // string
 
 
-// json -> Object
-const jsonToObj = JSON.parse(objToJson)  // { coffee: 'Americano', iceCream: 'Mint Choco' }
-console.log(jsonToObj)
-console.log(typeof jsonToObj)  // object
-console.log(jsonToObj.coffee)  // Americano
-
-
-
-
+// '' [] {} null undefined` 
 
 
 

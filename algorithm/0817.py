@@ -142,4 +142,7 @@
 #         abc(level+1, i)
 # abc(0, 0)
 
-
+a=['a','n','t','i','c']
+b=['a','b']
+c = list(set(a+b))
+print(c)

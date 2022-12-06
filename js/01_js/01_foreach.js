@@ -17,6 +17,7 @@ const colors = ['red', 'blue', 'green']
 //   console.log(color)
 // })
 
+// colors.forEach((color)=> console.log(color))
 // // 3.
 // colors.forEach((color) => {
 //   console.log(color)

@@ -18,7 +18,3 @@ const numbers = [1, 2, 3, 4, 5]
 //   return number * 2
 // })
 
-// // 4.
-// const newArry = numbers.map((number) => number * 2)
-
-
