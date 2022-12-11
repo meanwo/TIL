@@ -63,9 +63,30 @@
 // console.log(numbers.join('-'))
 
 
-const arrow1 = function (name) {
-    return `hello, ${name}`
-}
+// const arrow1 = function (name) {
+//     return `hello, ${name}`
+// }
 
-const arrow2 = (name) => name
-console.log(arrow2(1))
+// const arrow2 = (name) => name
+// console.log(arrow2(1))
+
+import { readFile } from 'fs'
+
+
+readFile('test.txt', 'utf8' , (err, data) => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  var input_data = data
+  console.log(typeof(input_data))
+  //   console.log(data)
+})
+
+var sum = 1
+if (typeof document !== 'undefined') {
+    const documentRef = useRef(document);
+
+  }
+// document.getElementById("data").innerHTML=input_data;
+document.getElementById("data").innerHTML=sum;

@@ -27,7 +27,7 @@ import heapq
 # arr 리스트를 한번에 heap 자료형으로 바꾸기
 
 # arr = [4, 87, 4, 24, 8, 23, 3, 7, 4]
-
+#
 # heapq.heapify(arr)
 # # print(arr)
 # for i in range(len(arr)):

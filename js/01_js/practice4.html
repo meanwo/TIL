@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax </title>
+    <style>
+    /* body {background:#000; color:#fff;} */
+    </style>
+    <script type="text/javascript">
+
+      var xhttp;
+      document.addEventListener("DOMContentLoaded", function(){
+        mySend()
+
+
+});
+      function createHttpRequest(){
+        xhttp = new XMLHttpRequest();
+      }
+
+      function mySend(){
+        createHttpRequest();
+        xhttp.onreadystatechange = callFunction;
+        xhttp.open("GET", "test.txt", true);
+        xhttp.send(null);
+      }
+
+      function callFunction(){
+        if(xhttp.readyState == 4) {
+          if(xhttp.status == 200){
+            var responseData = xhttp.responseText;
+            document.getElementById("result").innerHTML = responseData;
+          }
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <!-- <button type="button" id='my-btn' onclick="mySend()" >파일수신</button> -->
+    
+    <div id="result"></div>
+  </body>
+</html>
