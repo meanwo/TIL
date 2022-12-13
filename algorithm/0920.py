@@ -176,6 +176,7 @@
 #         if arr[i][j]==1:
 #             acc[j]+=1
 #
+# print(acc)
 # for i in range(7):          # 바로 작업 착수 가능한 것들은
 #     if acc[i]==0:           # used에 1체크 하고 q에 등록
 #         used[i]=1
