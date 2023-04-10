@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/database/dbproblem/db_ws_7_2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/database/dbproblem/db_ws_7_3" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/database/dbproblem/db_ws_7_4" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/vue/vue_problem/5_1/vue_ws_5_1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react/lecture-react" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react/practice-react/lecture-react" vcs="Git" />
   </component>
 </project>
