@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c44b0d8-c232-405d-bffe-65626a548fce" name="Default Changelist" comment="12/11 #1 ajax 통해 txt 파일 출력">
-      <change beforePath="$PROJECT_DIR$/.idea/TIL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TIL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-10-09__6_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-10-09__6_12__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6c44b0d8-c232-405d-bffe-65626a548fce" name="Default Changelist" comment="04/10 #1 백준 숨바꼭질 3, 4 문제">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/practice-react/lecture-react/2-react/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/react/practice-react/lecture-react/2-react/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/test1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/react/test1/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/test1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react/test1/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/test1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react/test1/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/test1/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/react/test1/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +42,12 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/SSAFY/Desktop/TIL&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.13913_숨바꼭질4">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SSAFY\Desktop\TIL\백준\너비우선탐색5" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.17071_숨바꼭질5">
     <configuration name="집합의 표현" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,27 +61,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/유니온 파인드/집합의 표현.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="1194_달이 차오른다, 가자." type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TIL" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/백준" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/1194_달이 차오른다, 가자..py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="2206_벽 부수고 이동하기" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="17071_숨바꼭질" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,11 +119,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/백준" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/백준/너비우선탐색" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/2206_벽 부수고 이동하기.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\SSAFY\Desktop\TIL\백준\너비우선탐색5\17071_숨바꼭질.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="17071_숨바꼭질5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/백준/너비우선탐색" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/너비우선탐색/17071_숨바꼭질5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.17071_숨바꼭질5" />
+        <item itemvalue="Python.17071_숨바꼭질" />
         <item itemvalue="Python.13913_숨바꼭질4" />
         <item itemvalue="Python.13549_숨바꼭질3" />
         <item itemvalue="Python.집합의 표현" />
-        <item itemvalue="Python.1194_달이 차오른다, 가자." />
-        <item itemvalue="Python.2206_벽 부수고 이동하기" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670746164438</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="04/10 #1 백준 숨바꼭질 3, 4 문제">
+      <created>1681122618881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681122618881</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +234,8 @@
     <MESSAGE value="11/08 #1" />
     <MESSAGE value="1207 #1" />
     <MESSAGE value="12/11 #1 ajax 통해 txt 파일 출력" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/11 #1 ajax 통해 txt 파일 출력" />
+    <MESSAGE value="04/10 #1 백준 숨바꼭질 3, 4 문제" />
+    <option name="LAST_COMMIT_MESSAGE" value="04/10 #1 백준 숨바꼭질 3, 4 문제" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -256,6 +259,11 @@
           <url>file://$PROJECT_DIR$/백준/13913_숨바꼭질4.py</url>
           <line>34</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/백준/너비우선탐색/17071_숨바꼭질5.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
