@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const state = {
+            _data: 'Hello world',
+        };
+
+        const render = () => document.body.innerHTML = `<p>${state.data}</p>`;
+        
+
+        // state 객체에 data라는 속성을 추가하는 함수, get과 set은 속성의 옵션들
+        Object.defineProperty(state, "data", {
+            // getter은 속성을 추가할 때 호출되는 함수
+            get() {
+                console.log('get')
+                return state._data
+            },
+            // setter는 attribute에 값을 할당할 때 호출되는 함수
+            set(value) {
+                console.log('set')
+                state._data = value;
+                render();
+            }
+        })
+
+        render();
+        state.data = "안녕";
+        state.data = "hello world";
+    </script>
+</body>
+</html>

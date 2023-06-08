@@ -1,16 +1,16 @@
 import heapq
 #
-# arr = []
-# heapq.heappush(arr, 4)
-# heapq.heappush(arr, 15)
-# heapq.heappush(arr, 2)
-# heapq.heappush(arr, 7)
-# heapq.heappush(arr, 5)
-# heapq.heappush(arr, 9)
-#
-# #log n 속도로 우선순위가 가장 높은 값을 출력
-# for i in range(len(arr)):
-#     print(heapq.heappop(arr), end=' ')
+arr = []
+heapq.heappush(arr, 4)
+heapq.heappush(arr, 15)
+heapq.heappush(arr, 2)
+heapq.heappush(arr, 7)
+heapq.heappush(arr, 5)
+heapq.heappush(arr, 9)
+
+#log n 속도로 우선순위가 가장 높은 값을 출력
+for i in range(len(arr)):
+    print(heapq.heappop(arr), end=' ')
 
 
 # arr 배열을 오름차순으로 정렬해보자!
@@ -152,9 +152,9 @@ import heapq
 # m=int(input())
 # arr=[[] for _ in range(n)]
 # for _ in range(m):
-#     a,b,c=map(int,input().split())
-#     arr[a].append((b,c))
-# print(arr)
+#     a, b, c = map(int, input().split())
+#     arr[a].append([b, c])
+# # print(arr)
 # start,ed=map(int,input().split())
 # inf=int(21e8)
 # result=[inf]*n
@@ -165,7 +165,7 @@ import heapq
 #     result[start]=0                  # 그 다음 부터는 heapq에서 최소 비용을 다음 경유지로 선택
 #
 #     while heap:
-#         print(heap)
+#         # print(heap)
 #         sk,k=heapq.heappop(heap)    # sk=시작점에서 경유지 까지 비용  그리고  k= 경유지
 #
 #         if result[k]<sk: continue   #  result 에서의 업데이트 되어있는 시작점에서->경유지 값 vs
@@ -176,6 +176,5 @@ import heapq
 #             if cost<result[i[0]]:
 #                 result[i[0]]=cost
 #                 heapq.heappush(heap,(cost,i[0]))
-#
 # dijkstra(start)
 # print(*result)

@@ -1,3 +1,4 @@
+import Controller from "../Controller.js";
 import { on, qs } from "../helpers.js";
 import View from "./View.js";
 
@@ -57,3 +58,4 @@ export default class SearchFormView extends View {
     super.show();
   }
 }
+

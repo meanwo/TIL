@@ -13,6 +13,7 @@ const TabLabel = {
   [TabType.HISTORY]: "최근 검색어",
 };
 
+// View를 상속받음
 export default class TabView extends View {
   constructor() {
     console.log(tag, "constructor");
@@ -24,6 +25,7 @@ export default class TabView extends View {
   }
 
   bindEvents() {
+    // li 안에서 클릭이 발생했는지 확인.
     delegate(this.element, "click", "li", (event) => this.handleClick(event));
   }
 

@@ -4,7 +4,8 @@ import View from "./View.js";
 const tag = "[SearchResultView]";
 
 export default class SearchResultView extends View {
-  constructor() {
+  constructor() {  
+    // 부모의 생성자함수를 호출
     super(qs("#search-result-view"));
 
     this.template = new Template();

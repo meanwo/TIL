@@ -29,6 +29,7 @@ export default class Controller {
 
   subscribeViewEvents() {
     this.searchFormView
+    // @submit이라는 이벤트가 발행되면 this의 search 함수를 호출.
       .on("@submit", (event) => this.search(event.detail.value))
       .on("@reset", () => this.reset());
 
